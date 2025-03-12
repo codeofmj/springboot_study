@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spring Boot</title>
+	</head>
+	<body>
+		<h1>Board Page</h1>
+
+		<p th:text="${list}"></p>		
+		<p th:text="${list[0]}"></p>
+		<p th:text="${list[1]}"></p>
+		<p th:text="${list[2]}"></p>
+		<p th:text="${list[3]}"></p>
+	
+		<ul th:each="word : ${list}">
+			<li th:text="${word}"></li>
+		</ul>
+		
+		<th:block th:each="word : ${list}">
+			<span th:text="${word}"></span>
+		</th:block>
+		
+		<span th:if="${18 lt 20}" th:text="'미성년자'"></span>
+		<span th:unless="${18 ge 20}" th:text="'미성년자'"></span>
+	</body>
+</html>
